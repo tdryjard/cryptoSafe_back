@@ -7,6 +7,8 @@ const cors = require('cors');
 
 const port = process.env.PORT || 8000
 
+app.use(cors({ credentials: true, origin: process.env.ORIGIN_URL }))
+
 app.use(cookieParser());
 
 app.use(bodyParser.json({
