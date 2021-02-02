@@ -7,7 +7,14 @@ const cors = require('cors');
 
 const port = process.env.PORT || 8000
 
-app.use(cors({ credentials: true, origin: process.env.ORIGIN_URL }))
+router.use(
+    cors({
+        origin: [
+            process.env.ORIGIN_URL,
+            'https://cryptosafe.digital'
+        ]
+    })
+)
 
 app.use(cookieParser());
 
